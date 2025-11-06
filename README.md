@@ -1,52 +1,37 @@
-# ClassStructures
+# Employee Class (Chapter 13)
 
-A C++ console application project designed to demonstrate the use of classes, objects, constructors, member functions, and basic object-oriented programming concepts. Built using Visual Studio (or another C++ development environment) as part of a classroom assignment.
+A C++ console application that demonstrates object-oriented programming fundamentals, including class design, encapsulation, constructors, accessors, mutators, and formatted output. This assignment focuses on how classes are used to create and manipulate related data objects.
 
----
+## Overview
+- Defines a class `Employee` with private data members:
+  - `name`
+  - `idNumber`
+  - `department`
+  - `position`
+- Provides multiple constructors:
+  - **Default constructor** — initializes members to default/empty values.
+  - **Overloaded constructor (full)** — accepts `name`, `idNumber`, `department`, and `position`.
+  - **Overloaded constructor (partial)** — accepts only `name` and `idNumber`, leaving other members blank.
+- Includes public member functions for data access and modification:
+  - Mutators: `setName`, `setIdNumber`, `setDepartment`, `setPosition`
+  - Accessors: `getName`, `getIdNumber`, `getDepartment`, `getPosition`
+- Demonstrates object creation, initialization through constructors, and display of formatted results.
 
-## Project Overview
+## Core Logic
+- Creates three `Employee` objects with different initialization forms:
+  1. Susan Meyers — 47899 — Accounting — Vice President  
+  2. Mark Jones — 39119 — IT — Programmer  
+  3. Joy Rogers — 81774 — Manufacturing — Engineer  
+- Stores the objects in an array for iteration.
+- Uses formatted output with `setw()` and alignment manipulators to print a clean table of employee data.
 
-This project covers the following core concepts:
+## Input Validation
+- All data is initialized directly within the program (no runtime input required).
+- No explicit validation is necessary for this assignment.
 
-- Defining classes with private data members and public member functions.  
-- Creating constructors (default, parameterized) and destructors (if needed).  
-- Using objects to represent real-world entities (for example: `Book`, `Student`, `Vehicle`).  
-- Using accessors (getters) and mutators (setters) to safely manage object state.  
-- Implementing member functions to perform operations on class data.  
-- Demonstrating interaction between objects (e.g., objects passed to functions, arrays or vectors of objects).  
-- Input validation and formatted output for clear console display.  
-- Clear code structure with header (`.hpp`/`.h`) and implementation (`.cpp`) files, and meaningful comments.
-
----
-
-## Features
-
-- Prompt the user to create one or more objects of a given class type (for example: create several `Student` objects).  
-- Populate object data via user input or default values.  
-- Display object information in a structured format (for example: listing all students, showing attributes like name, grade, ID).  
-- Allow the user to modify object data using member functions (e.g., update grade, change state).  
-- Optional: use an array or `std::vector` of objects to handle multiple instances.  
-- Validate user input (e.g., non-empty names, valid numeric values).  
-- Format the output for readability using `iomanip`.
-
----
-
-## Technologies Used
-
-- Language: C++ (compatible with C++11 or later)  
-- IDE: Visual Studio 2019/2022 (or any C++ compiler environment)  
-- Version Control: Git & GitHub  
-
----
-
-## Getting Started
-
-### Prerequisites
-
-You will need a system with a C++ compiler (Visual Studio preferred) and familiarity with basic C++ (variables, loops, functions) prior to using classes and objects.
-
-### Clone the repository
-
-```bash
-git clone https://github.com/Javi1591/ClassStructures.git
-cd ClassStructures
+## Build & Run
+- Visual Studio (Windows): open the solution or create a Console App and add the source file, then **Build → Run**.
+- g++ (CLI):
+  ```bash
+  g++ -std=c++11 -O2 -o EmployeeClass nazarioCPP213.cpp
+  ./EmployeeClass
